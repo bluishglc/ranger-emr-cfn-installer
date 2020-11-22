@@ -92,11 +92,23 @@ Core Nodes|10.0.0.114,10.0.0.136
 
 ### 4.1. Install Ranger + Integrate a Window AD Server + Integrate A Multi-Master EMR Cluster
 
-TBD
+The following diagram illustrates what this example will do:
+
+![example1](https://user-images.githubusercontent.com/5539582/99872053-fc157000-2c19-11eb-94c4-ee36ed30ce14.png)
+
+The following cloudformation template configuration will finish this job:
+
+![cfn-example-1](https://user-images.githubusercontent.com/5539582/99896184-1b1f0b00-2cc9-11eb-9def-ef7bf06ef14b.png)
 
 ### 4.2. Install Ranger + Integrate a Open LDAP Server + Integrate A Multi-Master EMR Cluster
 
-TBD
+The following diagram illustrates what this example will do:
+
+![example3](https://user-images.githubusercontent.com/5539582/99872059-059ed800-2c1a-11eb-82e7-da5e21949d44.png)
+
+The following cloudformation template configuration will finish this job:
+
+![cfn-example-2](https://user-images.githubusercontent.com/5539582/99896185-1e19fb80-2cc9-11eb-8183-592ebf9f0a36.png)
 
 
 
