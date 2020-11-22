@@ -111,4 +111,14 @@ The following cloudformation template configuration will finish this job:
 ![cfn-example-2](https://user-images.githubusercontent.com/5539582/99896185-1e19fb80-2cc9-11eb-8183-592ebf9f0a36.png)
 
 
+## 5. Versions & Compatibility
+
+The following is Ranger and EMR version compatibility form:
+
+&nbsp;|Ranger 1.X|Ranger 2.x
+---|---|---
+EMR 5.X|Y|N
+EMR 6.X|N|Y
+
+For Ranger 1, it works with Hadoop 2, for Ranger 2, it works with Hadoop 3, **This project is developed against Ranger 2.1.0, so now, it can only integrate EMR 6.X.** For Ranger 1.2 + EMR 5.X, it is to be developed in the next according to demands.
 
