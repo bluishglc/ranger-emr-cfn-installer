@@ -47,7 +47,16 @@ ranger-emr-ad.cn.template|Windows AD|China Regions
 ranger-emr-ldap.template|Open LDAP|Global Regions
 ranger-emr-ldap.cn.template|Open LDAP|China Regions
 
-## 3. Usage Examples
+## 3. Prerequisites
+
+Before installing, make sure following items are ready or done:
+
+1. Make sure the EMR cluster is in waiting status, no any job is running
+2. Upload your private SSH key (the pem file) to private S3 bucket, for example `/my-bucket/my-key.pem`
+3. It's recommanded to explore users and groups on Windows AD or Open LDAP via GUI tool, for example LDAP Admin, so as to detemine AD/LDAP related parameters
+4. Check network connectivities among Ranger server, Windows AD or Open LDAP server and EMR nodes
+
+## 4. Usage Examples
 
 To explain how to use this tool, assume we have following environment:
 
