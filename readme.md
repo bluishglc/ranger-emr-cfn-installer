@@ -47,15 +47,24 @@ ranger-emr-ad.cn.template|Windows AD|China Regions
 ranger-emr-ldap.template|Open LDAP|Global Regions
 ranger-emr-ldap.cn.template|Open LDAP|China Regions
 
-## 3. Usage Examples
+## 3. Prerequisites
+
+Before installing, make sure following items are ready or done:
+
+1. Make sure the EMR cluster is in waiting status, no any job is running
+2. Upload your private SSH key (the pem file) to private S3 bucket, for example `/my-bucket/my-key.pem`
+3. It's recommanded to explore users and groups on Windows AD or Open LDAP via GUI tool, for example LDAP Admin, so as to detemine AD/LDAP related parameters
+4. Check network connectivities among Ranger server, Windows AD or Open LDAP server and EMR nodes
+
+## 4. Usage Examples
 
 To explain how to use this tool, assume we have following environment:
 
 **A Windows AD Server:**
 
-Info Item Key|Info Item Value
----------|-----
-IP|10.0.0.194
+Key|Value
+---------:|:-----
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; IP|10.0.0.194
 Domain Name|corp.emr.local
 Base DN|cn=users,dc=corp,dc=emr,dc=local
 Bind DN|cn=ranger,ou=service accounts,dc=example,dc=com
@@ -64,9 +73,9 @@ User Object Class|person
 
 **An Open LDAP Server:**
 
-Info Item Key|Info Item Value
----------|-----
-IP|10.0.0.41
+Key|Value
+---------:|:-----
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; IP|10.0.0.41
 Base DN|dc=example,dc=com
 Bind DN|cn=ranger,ou=service accounts,dc=example,dc=com
 Bind DN Password|Admin1234!
@@ -78,25 +87,47 @@ User Object Class|inetOrgPerson
 **A Multi-Master EMR Cluster:**
 
 Node|IP
----|---
-Master Nodes|10.0.0.177,10.0.0.199,10.0.0.21
+---:|:---
+&emsp;&emsp;&emsp;&emsp;&emsp;Master Nodes|10.0.0.177,10.0.0.199,10.0.0.21
 Core Nodes|10.0.0.114,10.0.0.136
 
 
 **A Normal EMR Cluster:**
 
 Node|IP
----|---
-Master Nodes|10.0.0.177,10.0.0.199,10.0.0.21
+---:|:---
+&emsp;&emsp;&emsp;&emsp;&emsp;Master Nodes|10.0.0.177,10.0.0.199,10.0.0.21
 Core Nodes|10.0.0.114,10.0.0.136
 
 ### 4.1. Install Ranger + Integrate a Window AD Server + Integrate A Multi-Master EMR Cluster
 
-TBD
+The following diagram illustrates what this example will do:
+
+![example1](https://user-images.githubusercontent.com/5539582/99872053-fc157000-2c19-11eb-94c4-ee36ed30ce14.png)
+
+The following cloudformation template configuration will finish this job:
+
+![cfn-example-1](https://user-images.githubusercontent.com/5539582/99896184-1b1f0b00-2cc9-11eb-9def-ef7bf06ef14b.png)
 
 ### 4.2. Install Ranger + Integrate a Open LDAP Server + Integrate A Multi-Master EMR Cluster
 
-TBD
+The following diagram illustrates what this example will do:
+
+![example3](https://user-images.githubusercontent.com/5539582/99872059-059ed800-2c1a-11eb-82e7-da5e21949d44.png)
+
+The following cloudformation template configuration will finish this job:
+
+![cfn-example-2](https://user-images.githubusercontent.com/5539582/99896185-1e19fb80-2cc9-11eb-8183-592ebf9f0a36.png)
 
 
+## 5. Versions & Compatibility
+
+The following is Ranger and EMR version compatibility form:
+
+&nbsp;|Ranger 1.X|Ranger 2.x
+---|---|---
+EMR 5.X|Y|N
+EMR 6.X|N|Y
+
+For Ranger 1, it works with Hadoop 2, for Ranger 2, it works with Hadoop 3, **This project is developed against Ranger 2.1.0, so now, it can only integrate EMR 6.X.** For Ranger 1.2 + EMR 5.X, it is to be developed in the next according to demands.
 
