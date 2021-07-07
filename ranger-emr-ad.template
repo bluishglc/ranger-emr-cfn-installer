@@ -117,10 +117,6 @@ Parameters:
     Default: '2.1.0'
     AllowedValues:
       - '2.1.0'
-  RangerRepoUrl:
-    Description: Url of Ranger installation packges repository
-    Type: String
-    Default: 'http://52.81.173.97:7080/ranger-repo/'
   RangerPlugins:
     Description: Ranger Plugins List to Be Installed (Used Commas to Sperate Multiple Plugins)
     Type: String
@@ -234,7 +230,6 @@ Resources:
             --ad-bind-password '${AdBindPassword}' \
             --ad-user-object-class '${AdUserObjectClass}' \
             --ranger-version ${RangerVersion} \
-            --ranger-repo-url '${RangerRepoUrl}' \
             --ranger-plugins ${RangerPlugins} \
             --emr-master-nodes ${EmrMasterNodes} \
             --emr-core-nodes ${EmrCoreNodes} \
