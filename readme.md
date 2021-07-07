@@ -6,6 +6,16 @@ Author：Laurence Geng　　｜　　Created Date：2020-11-21　　｜　　Upd
 
 ---
 
+
+---
+
+Update@2021/07/07
+
+1. If EMR is based on Glue Data Catalog, Ranger still CAN work with it!
+2. By now, this solution works with all EMR 6.X (6.0.0 - 6.3.0)
+
+---
+
 This project is a series of aws cloudformation templates which are used to install ranger and integrate a AWS EMR cluster and a windows AD or Open LDAP server as authentication channel. There is another closely related project: **[ranger-emr-cli-installer](https://github.com/bluishglc/ranger-emr-cli-installer)** which does the same job via command line. The two projects are very close, but can work independently，you can pick anyone as you wish.
 
 ## 1. Ranger Introduction
@@ -130,4 +140,3 @@ EMR 5.X|Y|N
 EMR 6.X|N|Y
 
 For Ranger 1, it works with Hadoop 2, for Ranger 2, it works with Hadoop 3, **This project is developed against Ranger 2.1.0, so now, it can only integrate EMR 6.X.** For Ranger 1.2 + EMR 5.X, it is to be developed in the next according to demands.
-
